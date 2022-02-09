@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <title>微博</title>
+</head>
+<body>
+    
+    <div class="header">
+        <div class="w">
+            <div class="left">
+                &nbsp;&nbsp;<img src="./img/1.png" alt=""><br>
+                &nbsp;&nbsp;<textarea class="ctt"> </textarea>
+                <ul class="zt">
+                    <li>
+                        <img src="./img/3.png" alt="">表情
+                    </li>
+                    <li>
+                        <img src="./img/2.png" alt="">图片
+                    </li>
+                    <li>
+                        <img src="./img/4.png" alt="">视频
+                    </li>
+                    <li>
+                        <img src="./img/5.png" alt="">话题
+                    </li>
+                </ul>
+                <button class="fb">发布</button>
+            </div>
+            <div class="right">
+                <img src="./img/6.jpg" alt="" class="bj">
+                <div class="btom"></div>
+                <img class="tx" src="./img/touxiang1.jpeg" alt="">
+                <span class="nk"><strong>天天开心</strong></span>
+                <span class="person"><a href="javascript:;">个人中心</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="w">
+        <ul class="bd">
+           
+        </ul>
+    </div>
+
+    <script>
+        var ulObject=document.querySelector('.bd');
+        //1.创建对象
+        const xhr = new XMLHttpRequest();
+        //2.初始化，设置请求方法和url
+        xhr.open('GET','weibo.json')
+        //3.发送
+        xhr.send();
+        //4.事件绑定 处理服务端返回结果
+        xhr.onreadystatechange = function(){
+            //判断(服务端返回了所有的结果)
+            if(xhr.readyState === 4){
+                //判断相应状态码 200 404 403 401 500
+                if(xhr.status >= 200 && xhr.status < 300){
+                    var data = JSON.parse(this.responseText);
+                    for(var i = 0; i <4; i++){
+                        var li = document.createElement('li');
+                        li.setAttribute("class","bdli");
+                        li.innerHTML="<img class='txt' src='"+data[i].touxiang+"'><strong><span>"+data[i].nickname+"</span></strong><div class='content'>&nbsp;&nbsp;&nbsp;&nbsp;<span>"+data[i].textCon+"</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<img class='txt1' src='"+data[i].imgCon+"'></div><br><ul class='bottom'><li><img src='./img/12.png'>收藏</li><li><span>|</span></li><li><img src='./img/13.png'>转发</li><li><span>|</span></li><li><img src='./img/14.png'>评论</li><li><span>|</span></li><li><img src='./img/15.png'>点赞</li></ul>";
+                        ulObject.appendChild(li);
+                    }
+                }
+            }
+        }
+        var fb=document.querySelector('.fb');
+        fb.onclick=function(){
+            var textarea = document.querySelector(".ctt");
+            var newLi=document.createElement('li');
+            newLi.setAttribute("class","bdli");
+            newLi.innerHTML="<img class='txt' src='./img/touxiang1.jpeg'><strong><span>天天开心</span></strong><div class='content'>&nbsp;&nbsp;&nbsp;&nbsp;<span>"+textarea.value+"</div><br><ul class='bottom'><li><img src='./img/12.png'>收藏</li><li><span>|</span></li><li><img src='./img/13.png'>转发</li><li><span>|</span></li><li><img src='./img/14.png'>评论</li><li><span>|</span></li><li><img src='./img/15.png'>点赞</li></ul>";
+            ulObject.insertBefore(newLi,ulObject.children[0]);
+        }
+    </script>
+</body>
+</html>

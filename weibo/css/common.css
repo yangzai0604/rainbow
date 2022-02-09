@@ -1,0 +1,131 @@
+body{
+    background-color: #136788;
+}
+.w{
+    width: 1100px;
+    margin: 0 auto;
+}
+.header{
+    height: 150px;
+    margin-top: 10px;
+}
+.left{
+    width:900px;
+    height: 150px;
+    background-color: white;
+    float: left;
+    border-radius: 5px;
+    padding-top: 10px;
+
+}
+.right{
+    position: relative;
+    width:190px;
+    height: 150px;
+    border-radius: 5px;
+    background-color: white;
+    float: right;
+}
+.left{
+    position: relative;
+}
+.left textarea{
+    width: 880px;
+    height: 70px;
+    border-radius: 5px;
+}
+.left .zt li{
+    padding-top: 5px;
+    padding-left: 10px;
+    float: left;
+}
+.left .zt li img{
+    width: 30px;
+    height: 30px;
+}
+.left button{
+    width: 50px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #136788;
+    position: absolute;
+    right: 30px;
+    bottom: 8px;
+}
+.right .bj{
+    width: 190px;
+    height: 150px;
+}
+.right .btom{
+    position: absolute;
+    top: 75px;
+    width: 190px;
+    height: 75px;
+    background-color: #ffffff;
+}
+.right .tx{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 30px;
+    left: 50px;
+}
+.right .nk{
+    color: black;
+    font-size: 14px;
+    position: absolute;
+    top: 108px;
+    left: 65px;
+}
+.right .person{
+    position: absolute;
+    top: 130px;
+    left: 68px;
+}
+.right .person a{
+    color: blue;
+}
+
+.bdli{
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: white;
+}
+.txt{
+    margin-top: 5px;
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+.bdli span{
+    color: black;
+}
+.bdli .content{
+    border-radius: 5px;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    width: 900px;
+}
+.txt1{
+    width: 700px;
+    height: 400px;
+}
+.bottom{
+    
+    border-top: 1px solid rgba(173, 168, 168, 0.26);
+    margin: 0 auto;
+    width: 1000px;
+    height: 50px;
+}
+.bottom li{
+    float: left;
+    line-height: 50px;
+    padding-left: 100px;
+}
+.bottom li img{
+    width: 20px;
+    height: 20px;
+}
